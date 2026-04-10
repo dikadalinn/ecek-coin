@@ -5,8 +5,11 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: '$ECEK - The Bossiest Pekingese in Crypto',
+  title: '$ECEK Coin | The Royal Pekingese',
   description: 'Move over, doges. ECEK is here. Small, sassy, and ready to send your portfolio to the moon.',
+  icons: {
+    icon: '/assets/favicon.ico',
+  },
 };
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
