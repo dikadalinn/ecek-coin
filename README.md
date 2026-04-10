@@ -55,7 +55,7 @@ Move over, doges. ECEK is here. Small, sassy, and ready to send your portfolio t
 Stay updated by joining our Vanguard waitlist or following our official channels:
 - **Website**: [ecek-coin.vercel.app](https://ecek-coin.vercel.app)
 - **X (Twitter)**: [@EcekCoin](https://x.com/EcekCoin)
-- **Telegram**: [@ecekcoin_bot](https://t.me/ecekcoin_bot)
+- **Telegram**: [@ecekcoin](https://t.me/ecekcoin)
 
 ---
 

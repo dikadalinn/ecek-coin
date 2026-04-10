@@ -298,7 +298,7 @@ export default function Whitepaper() {
               <a href="https://x.com/EcekCoin" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-black-bg border border-gold/30 flex items-center justify-center text-gold hover:bg-gradient-to-br hover:from-gold hover:to-pink hover:text-black-bg hover:border-transparent transition-all duration-300">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="https://t.me/ecekcoin_bot" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-black-bg border border-gold/30 flex items-center justify-center text-gold hover:bg-gradient-to-br hover:from-gold hover:to-pink hover:text-black-bg hover:border-transparent transition-all duration-300">
+              <a href="https://t.me/ecekcoin" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-black-bg border border-gold/30 flex items-center justify-center text-gold hover:bg-gradient-to-br hover:from-gold hover:to-pink hover:text-black-bg hover:border-transparent transition-all duration-300">
                 <Send className="w-4 h-4" />
               </a>
             </div>
