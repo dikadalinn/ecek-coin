@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Copy, Check, Twitter, Send, ArrowRight, Wallet, ArrowUpRight } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const CONTRACT_ADDRESS = "0x000000000000000000000000000000000000ECEK";
 
@@ -165,10 +166,8 @@ export default function Page() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-tan font-bold text-xl tracking-wider">$ECEK</span>
           </div>
           <div className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#about" className="text-tan/70 hover:text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink"></span> About Us</a>
-            <a href="#how-to-buy" className="text-tan/70 hover:text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink"></span> How to Buy</a>
-            <a href="#tokenomics" className="text-tan/70 hover:text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink"></span> Tokenomics</a>
-            <a href="#roadmap" className="text-tan/70 hover:text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink"></span> Roadmap</a>
+            <Link href="/" className="text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink shadow-[0_0_10px_rgba(255,20,147,0.8)]"></span> Home</Link>
+            <Link href="/whitepaper" className="text-tan/70 hover:text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink"></span> Whitepaper</Link>
           </div>
           <a href="#waitlist" className="hidden md:flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-br from-gold/20 to-pink/20 border border-gold/30 text-gold hover:from-gold hover:to-pink hover:text-white hover:border-transparent transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] font-bold text-xs uppercase tracking-widest">
             Join now
@@ -319,6 +318,11 @@ export default function Page() {
             </div>
           </motion.div>
 
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={slideUp} className="flex justify-center mt-8">
+            <Link href="/whitepaper" className="px-8 py-4 bg-black-bg/50 backdrop-blur-md border border-gold/30 text-gold font-bold rounded-xl hover:border-pink hover:text-pink transition-all duration-300 uppercase tracking-wider shadow-[0_0_15px_rgba(212,175,55,0.1)]">
+              See Whitepaper
+            </Link>
+          </motion.div>
 
         </div>
       </section>
@@ -521,13 +525,23 @@ export default function Page() {
       <footer className="relative py-12 px-4 bg-black-bg overflow-hidden z-10">
         <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold/50 to-transparent" />
         <div className="max-w-7xl mx-auto flex flex-col items-center justify-center gap-6 relative z-10">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-pink p-[1px] overflow-hidden">
-              <div className="w-full h-full bg-black-bg rounded-full flex items-center justify-center overflow-hidden">
-                <Image src="/assets/ecek-logo.png" alt="ECEK Logo" width={32} height={32} className="object-cover" />
+          <div className="flex items-center gap-6">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-gold to-pink p-[1px] overflow-hidden">
+                <div className="w-full h-full bg-black-bg rounded-full flex items-center justify-center overflow-hidden">
+                  <Image src="/assets/ecek-logo.png" alt="ECEK Logo" width={32} height={32} className="object-cover" />
+                </div>
               </div>
+              <span className="text-tan/50 text-sm">© 2026 $ECEK Coin. All rights reserved.</span>
             </div>
-            <span className="text-tan/50 text-sm">© 2026 $ECEK Coin. All rights reserved.</span>
+            <div className="flex items-center gap-4 border-l border-gold/20 pl-6">
+              <a href="https://x.com/EcekCoin" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-black-bg border border-gold/30 flex items-center justify-center text-gold hover:bg-gradient-to-br hover:from-gold hover:to-pink hover:text-black-bg hover:border-transparent transition-all duration-300">
+                <Twitter className="w-4 h-4" />
+              </a>
+              <a href="https://t.me/ecekcoin_bot" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-black-bg border border-gold/30 flex items-center justify-center text-gold hover:bg-gradient-to-br hover:from-gold hover:to-pink hover:text-black-bg hover:border-transparent transition-all duration-300">
+                <Send className="w-4 h-4" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>
