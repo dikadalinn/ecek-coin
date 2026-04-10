@@ -1,20 +1,58 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# $ECEK Coin | The Royal Pekingese 🦁👟
 
-# Run and deploy your AI Studio app
+Welcome to the official repository for **$ECEK Coin**, the bossiest Pekingese in the crypto empire. This is a Next.js 15 project built with a premium, royal aesthetic featuring gold/pink gradients and high-performance animations.
 
-This contains everything you need to run your app locally.
+![ECEK Banner](/public/assets/illustration-1.png)
 
-View your app in AI Studio: https://ai.studio/apps/be517110-3087-40c1-9b4c-4f6ea9575f34
+## 👑 The Vision
+Move over, doges. ECEK is here. Small, sassy, and ready to send your portfolio to the moon. Pure meme power, pure royal bloodline.
 
-## Run Locally
+## 🛠 Tech Stack
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS 4.0
+- **Animations**: Framer Motion
+- **Waitlist**: Formspree Integration
 
-**Prerequisites:**  Node.js
+## 🚀 Features
+- **Dynamic Preloader**: Custom animated entrance with the ECEK logo.
+- **Royal Design System**: Dark mode with custom `gold`, `pink`, and `tan` color palettes.
+- **Vanguard Waitlist**: Smooth, native email collection system.
+- **Responsive Layout**: Optimized for both high-end desktop displays and mobile users.
+- **Smooth Navigation**: Glide effortlessly between sections of the empire.
 
+## 📦 Getting Started
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### Prerequisites
+- [Bun](https://bun.sh/) (Recommended) or Node.js
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dikadalinn/ecek-coin.git
+   cd ecek-coin
+   ```
+
+2. Install dependencies:
+   ```bash
+   bun install
+   ```
+
+3. Run the development server:
+   ```bash
+   bun dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## 📜 Royal Tokenomics
+- **Total Supply**: 500,000 $ECEK
+- **Taxes**: 0% Buy / 0% Sell
+- **Liquidity**: 100% Burned
+- **Contract**: Renounced
+
+## 👑 Join the Empire
+Stay updated by joining our Vanguard waitlist on the official website.
+
+---
+
+*© 2026 $ECEK Coin. All rights reserved.*
