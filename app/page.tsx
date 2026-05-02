@@ -9,10 +9,46 @@ import Link from 'next/link';
 const CONTRACT_ADDRESS = "0x000000000000000000000000000000000000ECEK";
 
 const phases = [
-  { id: "Phase 1", title: "The Bark", items: ["Website & Socials Launch", "Smart Contract Deployment", "Telegram & X Community", "DexScreener Trending"] },
-  { id: "Phase 2", title: "The Bite", items: ["Aggressive Marketing", "CG & CMC Listings", "5,000+ Holders", "Community Raids"] },
-  { id: "Phase 3", title: "The Empire", items: ["Tier 2 CEX Listings", "Exclusive Merch", "Treasury Expansion", "20,000+ Holders"] },
-  { id: "Phase 4", title: "World Domination", items: ["Tier 1 CEX Listings", "Flipping Legacy Dogs", "Supreme Breed Recognition", "To the Moon!"] }
+  { 
+    id: "Phase 1", 
+    title: "The Bark", 
+    items: [
+      { text: "Website & Socials Launch", completed: true },
+      { text: "Smart Contract Deployment", completed: true },
+      { text: "Telegram & X Community", completed: true },
+      { text: "BitStorage CEX Listing", completed: true }
+    ] 
+  },
+  { 
+    id: "Phase 2", 
+    title: "The Bite", 
+    items: [
+      { text: "Aggressive Marketing", completed: false },
+      { text: "CG & CMC Listings", completed: false },
+      { text: "5,000+ Holders", completed: false },
+      { text: "Community Raids", completed: false }
+    ] 
+  },
+  { 
+    id: "Phase 3", 
+    title: "The Empire", 
+    items: [
+      { text: "Further Mid-Tier CEX Listings", completed: false },
+      { text: "Exclusive Merch", completed: false },
+      { text: "Treasury Expansion", completed: false },
+      { text: "20,000+ Holders", completed: false }
+    ] 
+  },
+  { 
+    id: "Phase 4", 
+    title: "World Domination", 
+    items: [
+      { text: "Tier 1 CEX Listings", completed: false },
+      { text: "Flipping Legacy Dogs", completed: false },
+      { text: "Supreme Breed Recognition", completed: false },
+      { text: "To the Moon!", completed: false }
+    ] 
+  }
 ];
 
 // Reusable component for the Pekingese image placeholder
@@ -60,30 +96,7 @@ export default function Page() {
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const [waitlistStatus, setWaitlistStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleWaitlistSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setWaitlistStatus('loading');
-    const formData = new FormData(e.currentTarget);
-
-    try {
-      const response = await fetch("https://formspree.io/f/xqegvlzy", {
-        method: "POST",
-        body: formData,
-        headers: { Accept: "application/json" },
-      });
-
-      if (response.ok) {
-        setWaitlistStatus('success');
-        (e.target as HTMLFormElement).reset();
-      } else {
-        setWaitlistStatus('error');
-      }
-    } catch (error) {
-      setWaitlistStatus('error');
-    }
-  };
 
   const staggerContainer = {
     hidden: { opacity: 0 },
@@ -169,8 +182,8 @@ export default function Page() {
             <Link href="/" className="text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink shadow-[0_0_10px_rgba(255,20,147,0.8)]"></span> Home</Link>
             <Link href="/whitepaper" className="text-tan/70 hover:text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink"></span> Whitepaper</Link>
           </div>
-          <a href="#waitlist" className="hidden md:flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-br from-gold/20 to-pink/20 border border-gold/30 text-gold hover:from-gold hover:to-pink hover:text-white hover:border-transparent transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] font-bold text-xs uppercase tracking-widest">
-            Join now
+          <a href="https://bitstorage.finance/spot/trading/ECEKUSDT" target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-br from-gold/20 to-pink/20 border border-gold/30 text-gold hover:from-gold hover:to-pink hover:text-white hover:border-transparent transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] font-bold text-xs uppercase tracking-widest">
+            Trade now
           </a>
         </div>
       </motion.nav>
@@ -209,8 +222,8 @@ export default function Page() {
                 <a href="#about" className="px-8 py-4 bg-gradient-to-r from-gold to-[#B8860B] text-black-bg font-bold rounded-xl hover:from-pink hover:to-[#FF1493] hover:text-white transition-all duration-500 uppercase tracking-wider flex items-center gap-2 group shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(255,20,147,0.5)]">
                   Learn more <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <a href="#waitlist" className="px-8 py-4 bg-black-bg/50 backdrop-blur-md border border-gold/30 text-gold font-bold rounded-xl hover:border-pink hover:text-pink transition-all duration-300 uppercase tracking-wider">
-                  Join the waitlist
+                <a href="https://bitstorage.finance/spot/trading/ECEKUSDT" target="_blank" rel="noopener noreferrer" className="px-8 py-4 bg-black-bg/50 backdrop-blur-md border border-gold/30 text-gold font-bold rounded-xl hover:border-pink hover:text-pink transition-all duration-300 uppercase tracking-wider">
+                  Trade now
                 </a>
               </motion.div>
             </div>
@@ -305,14 +318,14 @@ export default function Page() {
             <div className="space-y-6">
               <motion.div variants={slideInRight} whileHover={{ scale: 1.05, x: -10 }} className="relative p-[1px] rounded-2xl bg-gradient-to-br from-gold/40 via-transparent to-pink/20 group cursor-default">
                 <div className="relative h-full bg-black-bg/80 backdrop-blur-xl p-6 rounded-2xl group-hover:bg-black-bg/60 transition-colors">
-                  <div className="text-sm text-tan/50 uppercase tracking-widest mb-2">Liquidity</div>
-                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#FFF8DC]">100% Burned</div>
+                  <div className="text-sm text-tan/50 uppercase tracking-widest mb-2">Network</div>
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#FFF8DC]">Ethereum (ERC-20)</div>
                 </div>
               </motion.div>
               <motion.div variants={slideInRight} whileHover={{ scale: 1.05, x: -10 }} className="relative p-[1px] rounded-2xl bg-gradient-to-br from-gold/40 via-transparent to-pink/20 group cursor-default">
                 <div className="relative h-full bg-black-bg/80 backdrop-blur-xl p-6 rounded-2xl group-hover:bg-black-bg/60 transition-colors">
-                  <div className="text-sm text-tan/50 uppercase tracking-widest mb-2">Contract</div>
-                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#FFF8DC]">Renounced</div>
+                  <div className="text-sm text-tan/50 uppercase tracking-widest mb-2">Ticker Symbol</div>
+                  <div className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-[#FFF8DC]">$ECEK</div>
                 </div>
               </motion.div>
             </div>
@@ -352,16 +365,16 @@ export default function Page() {
             </motion.div>
 
             <motion.div variants={staggerContainer}>
-              <motion.h2 variants={slideUp} className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-tan mb-6 uppercase tracking-wider">How to Buy (Pre-Launch Prep)</motion.h2>
+              <motion.h2 variants={slideUp} className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-tan mb-6 uppercase tracking-wider">How to Buy $ECEK</motion.h2>
               <motion.p variants={slideUp} className="text-xl text-tan/70 mb-12 max-w-xl leading-relaxed font-medium">
-                $ECEK is currently preparing for its grand entrance. The smart contract is <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold to-pink font-bold border-b border-pink/30 pb-1">NOT live yet</span>. Follow these steps so you are ready the second the gates open.
+                $ECEK is officially live and trading. Follow these steps to secure your bag on BitStorage.
               </motion.p>
               <div className="space-y-8">
                 {[
-                  { step: "01", title: "Get a Wallet", desc: "Download and install MetaMask or Trust Wallet. Create your wallet and lock away your seed phrase. A true king protects their treasury." },
-                  { step: "02", title: "Load up on ETH", desc: "The empire runs on Ethereum. Buy ETH from a centralized exchange (Binance, Coinbase, etc.) and transfer it to your new wallet address so you have gas ready." },
-                  { step: "03", title: "Join the Vanguard", desc: "Turn on notifications! Join our official Telegram and follow us on X. This is where the exact launch time and official updates will drop first." },
-                  { step: "04", title: "Await the Royal Decree", desc: "On launch day, we will post the ONLY official Contract Address (CA) in our official channels. Paste that CA into Uniswap, swap your ETH, and claim your $ECEK." }
+                  { step: "01", title: "Create an Account", desc: "Head over to BitStorage.finance, sign up for a free account, and complete any required security steps." },
+                  { step: "02", title: "Deposit USDT", desc: "$ECEK is traded against Tether (USDT). Deposit USDT from your external wallet into your BitStorage account." },
+                  { step: "03", title: "Find the ECEK Pair", desc: "Navigate to the Spot Trading dashboard and search for the ECEK/USDT trading pair." },
+                  { step: "04", title: "Trade & Hold!", desc: "Place a market or limit order to buy $ECEK. Once the order fills, your tokens are secure in your exchange wallet!" }
                 ].map((item, i) => (
                   <motion.div variants={slideInRight} key={i} className="flex gap-6 group">
                     <div className="flex flex-col items-center">
@@ -391,8 +404,8 @@ export default function Page() {
                 ))}
               </div>
 
-              <a href="#waitlist" className="inline-block mt-4 px-8 py-4 bg-gradient-to-r from-gold to-[#B8860B] text-black-bg font-bold rounded-xl hover:from-pink hover:to-[#FF1493] hover:text-white transition-all duration-500 uppercase tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(255,20,147,0.5)]">
-                Join the waitlist
+              <a href="https://bitstorage.finance/spot/trading/ECEKUSDT" target="_blank" rel="noopener noreferrer" className="inline-block mt-4 px-8 py-4 bg-gradient-to-r from-gold to-[#B8860B] text-black-bg font-bold rounded-xl hover:from-pink hover:to-[#FF1493] hover:text-white transition-all duration-500 uppercase tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(255,20,147,0.5)]">
+                Trade now
               </a>
             </motion.div>
           </motion.div>
@@ -426,7 +439,10 @@ export default function Page() {
                   {activePhase === idx && (
                     <motion.div layoutId="activeTab" className="absolute inset-0 bg-gradient-to-r from-gold to-pink" />
                   )}
-                  <span className="relative z-10">{phase.id}</span>
+                  <span className="relative z-10">
+                    {phase.id}
+                    {idx === 0 && <span className="ml-2 text-xs opacity-80">(Completed)</span>}
+                  </span>
                   <ArrowUpRight className={`relative z-10 w-5 h-5 transition-transform ${activePhase === idx ? 'rotate-45' : 'opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0'}`} />
                 </motion.button>
               ))}
@@ -454,9 +470,15 @@ export default function Page() {
                       <h3 className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-pink mb-8 uppercase">{phases[activePhase].title}</h3>
                       <ul className="space-y-6">
                         {phases[activePhase].items.map((item, i) => (
-                          <li key={i} className="flex items-start gap-4 text-lg text-tan/80">
-                            <div className="w-2 h-2 rounded-full bg-gradient-to-r from-gold to-pink mt-2.5 shrink-0 shadow-[0_0_10px_rgba(255,20,147,0.5)]" />
-                            <span>{item}</span>
+                          <li key={i} className={`flex items-start gap-4 text-lg ${item.completed ? 'text-tan/60' : 'text-tan/80'}`}>
+                            {item.completed ? (
+                              <div className="w-6 h-6 rounded-full bg-gradient-to-br from-gold to-pink flex items-center justify-center mt-0.5 shrink-0 shadow-[0_0_10px_rgba(255,20,147,0.4)]">
+                                <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                              </div>
+                            ) : (
+                              <div className="w-2 h-2 rounded-full bg-gradient-to-r from-gold to-pink mt-2.5 ml-2 shrink-0 shadow-[0_0_10px_rgba(255,20,147,0.5)]" />
+                            )}
+                            <span className="font-medium">{item.text}</span>
                           </li>
                         ))}
                       </ul>
@@ -476,47 +498,19 @@ export default function Page() {
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true, margin: "-100px" }} variants={slideUp}>
             <h2 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold via-pink to-gold animate-gradient mb-6 uppercase tracking-wider">Join the Royal Vanguard</h2>
             <p className="text-xl text-tan/80 mb-10 leading-relaxed font-medium">
-              Be the first to know when the ECEK gates open. Exclusive drops, early announcements, and pure imperial glory await.
+              Trade ECEK now on our listed CEX!
             </p>
 
-            <form onSubmit={handleWaitlistSubmit} className="relative z-20 flex flex-col sm:flex-row gap-4 max-w-2xl mx-auto">
-              <input
-                type="email"
-                name="email"
-                placeholder="Enter your email address"
-                required
-                disabled={waitlistStatus === 'loading' || waitlistStatus === 'success'}
-                className="flex-1 px-8 py-5 bg-black-bg/80 backdrop-blur-xl border border-gold/40 rounded-2xl text-lg text-tan placeholder-tan/40 focus:outline-none focus:border-pink focus:shadow-[0_0_20px_rgba(255,20,147,0.3)] transition-all disabled:opacity-50"
-              />
-              <button
-                type="submit"
-                disabled={waitlistStatus === 'loading' || waitlistStatus === 'success'}
-                className="px-8 py-5 bg-gradient-to-r from-gold to-[#B8860B] text-black-bg font-bold rounded-2xl hover:from-pink hover:to-[#FF1493] hover:text-white transition-all duration-500 uppercase tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(255,20,147,0.6)] shrink-0 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center min-w-[180px]"
+            <div className="relative z-20 flex justify-center mt-8">
+              <a
+                href="https://bitstorage.finance/spot/trading/ECEKUSDT"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-10 py-5 bg-gradient-to-r from-gold to-[#B8860B] text-black-bg font-bold rounded-2xl hover:from-pink hover:to-[#FF1493] hover:text-white transition-all duration-500 uppercase tracking-wider shadow-[0_0_20px_rgba(212,175,55,0.4)] hover:shadow-[0_0_30px_rgba(255,20,147,0.6)] flex items-center justify-center text-lg"
               >
-                {waitlistStatus === 'loading' ? 'Joining...' : waitlistStatus === 'success' ? 'Joined!' : 'Join Waitlist'}
-              </button>
-            </form>
-
-            <AnimatePresence>
-              {waitlistStatus === 'success' && (
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-6 text-pink font-bold tracking-wide"
-                >
-                  Welcome to the Vanguard! Keep an eye on your inbox.
-                </motion.p>
-              )}
-              {waitlistStatus === 'error' && (
-                <motion.p
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  className="mt-6 text-red-500 font-bold tracking-wide"
-                >
-                  Something went wrong. Please try again!
-                </motion.p>
-              )}
-            </AnimatePresence>
+                Trade now
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>

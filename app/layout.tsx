@@ -12,11 +12,14 @@ export const metadata: Metadata = {
   },
 };
 
+import AgentationProvider from '@/components/AgentationProvider';
+
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
     <html lang="en" className="scroll-smooth">
       <body className={`${inter.className} antialiased selection:bg-pink selection:text-white`} suppressHydrationWarning>
         {children}
+        <AgentationProvider />
       </body>
     </html>
   );

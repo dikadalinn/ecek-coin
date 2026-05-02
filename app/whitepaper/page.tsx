@@ -48,8 +48,8 @@ export default function Whitepaper() {
             <Link href="/" className="text-tan/70 hover:text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink"></span> Home</Link>
             <Link href="/whitepaper" className="text-gold transition-colors flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-gradient-to-r from-gold to-pink shadow-[0_0_10px_rgba(255,20,147,0.8)]"></span> Whitepaper</Link>
           </div>
-          <a href="/#waitlist" className="hidden md:flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-br from-gold/20 to-pink/20 border border-gold/30 text-gold hover:from-gold hover:to-pink hover:text-white hover:border-transparent transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] font-bold text-xs uppercase tracking-widest">
-            Join now
+          <a href="https://bitstorage.finance/spot/trading/ECEKUSDT" target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center justify-center px-6 py-2 rounded-full bg-gradient-to-br from-gold/20 to-pink/20 border border-gold/30 text-gold hover:from-gold hover:to-pink hover:text-white hover:border-transparent transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] font-bold text-xs uppercase tracking-widest">
+            Trade now
           </a>
         </div>
       </motion.nav>
@@ -153,7 +153,7 @@ export default function Whitepaper() {
 
                   {[
                     {
-                      phase: "Phase A",
+                      phase: "Phase A (Active)",
                       title: "Imperial IP Establishment",
                       desc: "Focusing on establishing the majestic Pekingese aesthetic across the crypto space. This includes the creation of high-quality digital assets, majestic meme generators, and community toolkits to empower our citizens' user-generated content.",
                       color: "from-gold to-yellow-600"
@@ -241,10 +241,10 @@ export default function Whitepaper() {
                       
                       <div className="grid grid-cols-2 gap-4 flex-1">
                         {[
-                          { label: "Liquidity Pool", value: "100%", icon: Droplets },
+                          { label: "Public Supply", value: "100%", icon: Droplets },
                           { label: "Team/Presale", value: "0%", icon: Users },
                           { label: "Buy/Sell Tax", value: "0%", icon: Percent },
-                          { label: "Liquidity", value: "Burned", icon: Flame }
+                          { label: "Primary Exchange", value: "BitStorage", icon: Activity }
                         ].map((stat, i) => (
                           <div key={i} className="bg-black-bg/50 border border-pink/10 rounded-2xl p-4 flex flex-col items-center text-center justify-center group-hover:border-pink/30 transition-colors shadow-inner">
                             <stat.icon className="w-6 h-6 text-gold mb-3 opacity-80" />
@@ -261,9 +261,9 @@ export default function Whitepaper() {
               {/* 5. Operational Governance */}
               <section className="space-y-6">
                 <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-gold to-pink uppercase tracking-wider border-b border-gold/20 pb-4">5. Operational Governance</h2>
-                <p>The ECEK Empire operates on a model of absolute decentralized autonomy.</p>
-                <p>Upon the successful deployment of the smart contract and the burning of the initial liquidity pool, <strong className="text-white">contract ownership will be strictly renounced</strong>.</p>
-                <p>This means the founding team relinquishes the throne to the people. The code cannot be altered, trading cannot be paused, and taxes cannot be changed. The operational future and the direction of the $ECEK dynasty lie solely in the hands of community consensus and citizen-led initiatives.</p>
+                <p>The ECEK Empire operates on a model of absolute transparency and security.</p>
+                <p>Following the successful deployment of the smart contract and official listing on <strong className="text-white">BitStorage</strong>, the project operates with zero hidden taxes and no malicious code alterations.</p>
+                <p>The code cannot be maliciously altered, and taxes will forever remain 0%. The operational future and the direction of the $ECEK dynasty lie safely in the hands of community consensus and citizen-led initiatives.</p>
               </section>
 
               {/* 6. Disclaimers */}
